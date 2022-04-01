@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "BoB.MS.Service";
+//option go_package=".:proto";
+package clients;
+
+// The greeting service definition.
+service Clients {
+  // Sends a greeting
+  rpc CreateClient (ClientInfo) returns (ClientId);
+  rpc GetClient(ClientId) returns (ClientInfo);
+}
+
+message ClientInfo
+{
+	string name = 1;
+	int32 id = 2;
+}
+
+message ClientId
+{
+	int32 value = 1;
+}
